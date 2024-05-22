@@ -1,14 +1,28 @@
 package fourth;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-    Basket basket = new Basket();
+        Scanner console = new Scanner(System.in);
 
-    basket.addProduct(new Product("banan", 1));
-    basket.addProduct(new Product("apple", 2));
-    basket.addProduct(new Product("orange", 3));
+        Basket basket = new Basket();
 
-    basket.getBasket();
-
+        while (true) {
+            String message = console.nextLine();
+            switch (message) {
+                case "add" -> {
+                    System.out.println("Ввведите название продукта");
+                    String productName = console.nextLine();
+                    System.out.println("Ввведите цену продукта");
+                    int productPrice = console.nextInt();
+                    basket.addProduct(new Product(productName, productPrice));
+                }
+                case "show" -> {
+                    basket.getBasket();
+                }
+                default -> System.out.println("Такой команды нет");
+            }
+        }
     }
 }
