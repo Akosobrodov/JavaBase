@@ -1,9 +1,9 @@
 package fourth;
 
 class Product {
-    public String name;
+    private String name;
 
-    public double price;
+    private double price;
 
     Product(String name, double price) {
         this.name = name;
@@ -11,11 +11,11 @@ class Product {
         this.price = price;
     }
 
-    public String getNameProduct() {
+    public String getName() {
         return name;
     }
 
-    public double getPriceProduct() {
+    public double getPrice() {
         return price;
     }
 }
